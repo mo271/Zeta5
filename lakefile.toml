@@ -17,11 +17,6 @@ weak.linter.unreachableTactic = false
 weak.linter.unnecessarySeqFocus = false
 maxSynthPendingDepth = 3
 
-[[require]]
-name = "mathlib"
-scope = "leanprover-community"
-rev = "f385f9fd18abed332ebcd3df239cb357e264aceb"
-
 [[lean_lib]]
 name = "Apery"
 
@@ -35,3 +30,8 @@ name = "Solution"
 name = "PrimeNumberTheoremAnd"
 git = "https://github.com/mo271/PrimeNumberTheoremAnd"
 rev = "04d81b2a68ea3548b9990813fdc463c78511f412"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "f385f9fd18abed332ebcd3df239cb357e264aceb"
