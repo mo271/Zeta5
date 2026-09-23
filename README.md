@@ -22,7 +22,7 @@ The proof follows A. Fauzan’s preprint, *ζ(5) is irrational* (17 September
 ## Dependencies
 
 - [Mathlib](https://github.com/leanprover-community/mathlib4), pinned to
-  `v4.33.1`.
+  `f385f9fd18abed332ebcd3df239cb357e264aceb` for Lean `v4.34.0-rc1`.
 - [PrimeNumberTheoremAnd](https://github.com/mo271/PrimeNumberTheoremAnd),
   imported by `Apery/PNT.lean` for the prime number theorem.
 - [Formal Conjectures](https://github.com/google-deepmind/formal-conjectures)
