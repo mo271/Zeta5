@@ -6,7 +6,7 @@ Lean 4 / Mathlib project around the statement
 theorem irrational_five : ∃ x, Irrational x ∧ riemannZeta 5 = x
 ```
 
-following the preprint *ζ(5) is irrational* (A. Fauzan, 17 September 2026).
+following the preprint [ζ(5) is irrational](https://zenodo.org/records/22826419). (A. Fauzan, 17 September 2026).
 
 Toolchain: Lean `v4.33.1`, Mathlib `v4.33.1` (commit `0df444a3`). The prime number theorem
 `θ ~ id` comes from [PrimeNumberTheoremAnd](https://github.com/mo271/PrimeNumberTheoremAnd/tree/v4.33.1)
