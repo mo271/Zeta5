@@ -1,7 +1,7 @@
 name = "Apery"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["Apery"]
+defaultTargets = ["Apery", "Challenge", "Solution"]
 
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
@@ -17,15 +17,21 @@ weak.linter.unreachableTactic = false
 weak.linter.unnecessarySeqFocus = false
 maxSynthPendingDepth = 3
 
-[[require]]
-name = "mathlib"
-scope = "leanprover-community"
-rev = "v4.33.1"
-
 [[lean_lib]]
 name = "Apery"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
 
 [[require]]
 name = "PrimeNumberTheoremAnd"
 git = "https://github.com/mo271/PrimeNumberTheoremAnd"
 rev = "04d81b2a68ea3548b9990813fdc463c78511f412"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "f385f9fd18abed332ebcd3df239cb357e264aceb"

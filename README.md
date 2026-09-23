@@ -8,9 +8,16 @@ theorem irrational_five : ∃ x, Irrational x ∧ riemannZeta 5 = x
 
 following the preprint [ζ(5) is irrational](https://zenodo.org/records/22826419). (A. Fauzan, 17 September 2026).
 
-Toolchain: Lean `v4.33.1`, Mathlib `v4.33.1` (commit `0df444a3`). The prime number theorem
-`θ ~ id` comes from [PrimeNumberTheoremAnd](https://github.com/mo271/PrimeNumberTheoremAnd/tree/v4.33.1)
-(the `v4.33.1` branch, pinned to commit `04d81b2a`), imported in `Apery/PNT.lean`.
+Toolchain: Lean `v4.34.0-rc1`, Mathlib pinned to commit `f385f9fd`. The prime number theorem
+`θ ~ id` comes from [PrimeNumberTheoremAnd](https://github.com/mo271/PrimeNumberTheoremAnd)
+(pinned to commit `04d81b2a`), imported in `Apery/PNT.lean`.
+
+`Challenge.lean` holds the benchmark statement, copied from the Formal Conjectures declaration
+[`RiemannZetaValues.irrational_five`](https://github.com/google-deepmind/formal-conjectures/blob/2db01438fda960163f58ff2c2385b52e53f56dd2/FormalConjectures/Wikipedia/RiemannZetaValues.lean),
+and `Solution.lean` discharges it from `Apery.irrational_five`. The CI workflow
+`.github/workflows/comparator.yml` runs [Comparator](https://github.com/leanprover/comparator)
+on `config.json`, checking that `Solution.lean` really proves the challenge statement and that
+the proof depends only on `propext`, `Classical.choice`, and `Quot.sound`.
 
 License: Apache 2.0 (see `LICENSE`), as for Mathlib and PrimeNumberTheoremAnd.
 

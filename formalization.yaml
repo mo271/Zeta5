@@ -1,0 +1,87 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Irrationality of ζ(5)"
+  description: >-
+    A Lean formalization of the irrationality of the Riemann zeta value ζ(5),
+    following A. Fauzan's preprint and the corresponding Formal Conjectures
+    statement. The proof supplies the Comparator challenge theorem
+    RiemannZetaValues.irrational_five.
+  authors: ["Moritz Firsching"]
+  responsible_maintainers: ["Moritz Firsching"]
+  license: "Apache-2.0"
+
+repository:
+  role: "substantive-development"
+
+sources:
+  - title: "Formal Conjectures: Particular values of the Riemann zeta function"
+    authors: ["The Formal Conjectures Authors"]
+    id: "https://github.com/google-deepmind/formal-conjectures/blob/2db01438fda960163f58ff2c2385b52e53f56dd2/FormalConjectures/Wikipedia/RiemannZetaValues.lean"
+    type: "formalization repository"
+    location: "RiemannZetaValues.irrational_five"
+    relationship: "formalizes"
+    note: >-
+      Challenge.lean copies this theorem statement verbatim from the pinned
+      Formal Conjectures revision.
+  - title: "ζ(5) is irrational"
+    authors: ["A. Fauzan"]
+    type: "preprint"
+    location: "Theorem 1.1"
+    relationship: "formalizes"
+    note: "The proof development follows the preprint dated 17 September 2026."
+  - title: "Particular values of the Riemann zeta function"
+    authors: ["Wikipedia contributors"]
+    id: "https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function"
+    type: "encyclopedia article"
+    relationship: "background"
+
+classification:
+  arxiv: ["math.NT"]
+  msc2020: ["11M06", "11J72"]
+
+status:
+  scope: >-
+    Proves the Formal Conjectures statement that ζ(5) is irrational and
+    verifies the proof independently through Lean's kernel and Comparator.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - declaration: "RiemannZetaValues.irrational_five"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Quot.sound", "Classical.choice"]
+      comparator_config: "config.json"
+      literature_dependencies: []
+
+automation:
+  methods:
+    - method: "manual"
+      framework: "Lean 4 and Mathlib"
+      tool_setup: >-
+        The proof development uses the pinned Lean v4.34.0-rc1 toolchain,
+        the pinned Mathlib revision, and the pinned PrimeNumberTheoremAnd
+        dependency. Comparator and Landrun are pinned in
+        .github/workflows/comparator.yml.
+  notes: >-
+    The Comparator wrapper and metadata are maintained alongside the proof
+    development; the challenge deliberately contains one sorry placeholder.
+
+fidelity:
+  divergences: >-
+    The challenge theorem is the same proposition as the Formal Conjectures
+    declaration, but omits Formal Conjectures-only category and answer
+    attributes because the standalone challenge imports Mathlib directly.
+
+review:
+  status: "self-assessed"
+  reviewers: ["Moritz Firsching"]
+  notes: >-
+    The proof is checked by the existing Lean build and the Comparator CI
+    workflow against the standard permitted axiom whitelist.
+
+acknowledgements: >-
+  This project uses Lean, Mathlib, PrimeNumberTheoremAnd, Formal Conjectures,
+  and leanprover/comparator.
