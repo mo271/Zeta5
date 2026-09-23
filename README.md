@@ -1,4 +1,4 @@
-# Apery
+# Zeta5
 
 Lean 4 / Mathlib project around the statement
 
