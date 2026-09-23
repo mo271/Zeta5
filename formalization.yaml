@@ -61,9 +61,10 @@ automation:
     - method: "manual"
       framework: "Lean 4 and Mathlib"
       tool_setup: >-
-        The proof development uses the pinned Lean v4.33.1 toolchain,
-        Mathlib, and the pinned PrimeNumberTheoremAnd dependency. Comparator
-        and Landrun are pinned in .github/workflows/comparator.yml.
+        The proof development uses the pinned Lean v4.34.0-rc1 toolchain,
+        the pinned Mathlib revision, and the pinned PrimeNumberTheoremAnd
+        dependency. Comparator and Landrun are pinned in
+        .github/workflows/comparator.yml.
   notes: >-
     The Comparator wrapper and metadata are maintained alongside the proof
     development; the challenge deliberately contains one sorry placeholder.
