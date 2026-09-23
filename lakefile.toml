@@ -1,7 +1,7 @@
 name = "Apery"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["Apery"]
+defaultTargets = ["Apery", "Challenge", "Solution"]
 
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
@@ -24,6 +24,12 @@ rev = "v4.33.1"
 
 [[lean_lib]]
 name = "Apery"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
 
 [[require]]
 name = "PrimeNumberTheoremAnd"
