@@ -68,7 +68,7 @@ lemma pole_sum_reduce (c : Fin (m + 1)) (is it : ℕ) :
   · intro j hj hjn
     rw [res_entry_zero hm n hj, C_0, zero_mul]
     by_contra h
-    push_neg at h
+    push Not at h
     apply hjn
     exact Finset.mem_filter.mpr ⟨Finset.mem_Icc.mpr ⟨by omega, (Finset.mem_Icc.mp hj).2⟩, h.2.1⟩
 

@@ -255,7 +255,7 @@ theorem log_Δ_le' (n : ℕ) (hn : 0 < n) :
   have hfac : (0 : ℝ) < ((37 * n).factorial : ℝ) := by positivity
   have hIpos : 0 < I := by
     by_contra hneg
-    push_neg at hneg
+    push Not at hneg
     have : (1 / ((37 * n).factorial : ℝ)) * I ≤ 0 := mul_nonpos_of_nonneg_of_nonpos (by positivity) hneg
     linarith
   have hgint := integrableOn_gK n hn

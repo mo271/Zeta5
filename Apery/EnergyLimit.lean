@@ -74,7 +74,7 @@ theorem energy_log_nonpos [Fintype ι] {s : ι → ℝ} {γ : ι → ℝ → ℂ
   have hlim : Tendsto (fun n : ℕ => energy s γ (fun z w => Ltr (1 / ((n : ℝ) + 1)) ((n : ℝ) + 1) ‖z - w‖))
       atTop (𝓝 (energy s γ (fun z w => Real.log ‖z - w‖))) := by
     unfold energy
-    refine tendsto_finset_sum _ fun k _ => tendsto_finset_sum _ fun l _ => ?_
+    refine tendsto_finsetSum _ fun k _ => tendsto_finsetSum _ fun l _ => ?_
     exact (tendsto_pairInt_Ltr hγ k l (hint k l) (hae k l)).const_mul _
   exact le_of_tendsto' hlim hle
 

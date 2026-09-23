@@ -6,7 +6,15 @@ defaultTargets = ["Apery"]
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
 relaxedAutoImplicit = false
-weak.linter.mathlibStandardSet = true
+# The Mathlib style linters are off: most of the development consists of generated
+# certificate tables (long lines), and `lake build --wfail` should pass.
+weak.linter.mathlibStandardSet = false
+weak.linter.unusedVariables = false
+weak.linter.unusedSectionVars = false
+weak.linter.unusedSimpArgs = false
+weak.linter.unusedTactic = false
+weak.linter.unreachableTactic = false
+weak.linter.unnecessarySeqFocus = false
 maxSynthPendingDepth = 3
 
 [[require]]

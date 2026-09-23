@@ -200,7 +200,7 @@ theorem Δ_pos (n : ℕ) (_hn : 0 < n) : 0 < aeval zeta5 (Δ n) := by
     have hB : Set.Finite {y : ℝ | IsRoot q (y ^ 2)} := by
       refine (hroots.image Real.sqrt |>.union (hroots.image fun t => -Real.sqrt t)).subset ?_
       intro y hy
-      simp only [Set.mem_setOf_eq] at hy
+      simp only [Set.mem_ofPred_eq] at hy
       rcases le_or_gt 0 y with h | h
       · exact Or.inl ⟨y ^ 2, hy, Real.sqrt_sq h⟩
       · exact Or.inr ⟨y ^ 2, hy, by

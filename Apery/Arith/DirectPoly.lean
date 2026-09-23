@@ -147,7 +147,7 @@ theorem VG_polyPart_eval (κ : ℚ) (hκ : VG p κ 0) (Z : Multiset ℤ) (Pl : F
     rw [← h2]; field_simp [hfac r hr]
   have hPm : P.eval (m : ℚ) = H.eval (m : ℚ) * (PiO.eval (m : ℚ))⁻¹ -
       ∑ r ∈ Plo, resP A Pl r * ((m : ℚ) - r)⁻¹ := by
-    rw [hH, eval_add, eval_mul, eval_finset_sum]
+    rw [hH, eval_add, eval_mul, eval_finsetSum]
     simp only [eval_mul, eval_C]
     rw [Finset.sum_congr rfl fun r hr => by rw [hEo r hr]]
     rw [add_mul, Finset.sum_mul]

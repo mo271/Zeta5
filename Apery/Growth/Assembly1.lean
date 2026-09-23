@@ -101,7 +101,7 @@ lemma small_range_le (n : ℕ) (hn : 1 ≤ n) :
       unfold cPrime
       split_ifs with hp h24
       · have hv : k ^ padicValNat k 24 ∣ 24 := by
-          haveI := Fact.mk hp; exact pow_padicValNat_dvd
+          have := Fact.mk hp; exact pow_padicValNat_dvd
         have := Nat.le_of_dvd (by norm_num) hv
         have h' : ((k ^ padicValNat k 24 : ℕ) : ℝ) ≤ 24 := by exact_mod_cast this
         have hk0 : (0 : ℝ) < k := by exact_mod_cast hp.pos

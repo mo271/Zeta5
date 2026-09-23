@@ -124,12 +124,12 @@ lemma Uω_antitoneOn_Iic' {a b : ℝ} (hab : a < b) : AntitoneOn (Uω a b) (Iic 
   have hy' : y ≤ b := hy
   by_cases hya : y ≤ a
   · exact Uω_antitoneOn_Iic hab (show x ∈ Iic a from (hxy.trans hya)) (show y ∈ Iic a from hya) hxy
-  · push_neg at hya
+  · push Not at hya
     rw [Uω_of_mem hya.le hy']
     by_cases hxa : x ≤ a
     · have := Uω_antitoneOn_Iic hab (show x ∈ Iic a from hxa) (Set.mem_Iic.mpr le_rfl) hxa
       rwa [Uω_of_mem le_rfl hab.le] at this
-    · push_neg at hxa
+    · push Not at hxa
       rw [Uω_of_mem hxa.le hx']
 
 /-- `Uω a b` is nondecreasing on `[a, ∞)` (constant on `[a, b]`). -/
@@ -139,12 +139,12 @@ lemma Uω_monotoneOn_Ici' {a b : ℝ} (hab : a < b) : MonotoneOn (Uω a b) (Ici 
   have hy' : a ≤ y := hy
   by_cases hxb : b ≤ x
   · exact Uω_monotoneOn_Ici hab (show x ∈ Ici b from hxb) (show y ∈ Ici b from hxb.trans hxy) hxy
-  · push_neg at hxb
+  · push Not at hxb
     rw [Uω_of_mem hx' hxb.le]
     by_cases hyb : b ≤ y
     · have := Uω_monotoneOn_Ici hab (Set.mem_Ici.mpr le_rfl) (show y ∈ Ici b from hyb) hyb
       rwa [Uω_of_mem hab.le le_rfl] at this
-    · push_neg at hyb
+    · push Not at hyb
       rw [Uω_of_mem hy' hyb.le]
 
 /-! ### Facts about Table 1 -/

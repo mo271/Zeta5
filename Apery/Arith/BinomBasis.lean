@@ -181,7 +181,7 @@ theorem derivative_bin (k : ℕ) :
         ext j; simp only [Finset.mem_filter, Finset.mem_Icc]; omega
       rw [h3]; ring
     have h0 : D.eval 0 = 0 := by
-      rw [hD, eval_sub, eval_finset_sum, bin_derivative_eval_zero,
+      rw [hD, eval_sub, eval_finsetSum, bin_derivative_eval_zero,
         ← Finset.sum_erase_add _ _ (show k + 1 ∈ Icc 1 (k + 1) by simp)]
       rw [Finset.sum_eq_zero]
       · simp [bin_zero, dcoef]
@@ -199,7 +199,7 @@ theorem newton (P : ℚ[X]) {d : ℕ} (hd : P.natDegree ≤ d) :
   intro m
   have h := shift_eq_sum_fwdDiff_iter (h := (1 : ℚ)) P.eval m 0
   simp only [zero_add, nsmul_eq_mul, mul_one] at h
-  rw [h, eval_finset_sum]
+  rw [h, eval_finsetSum]
   simp only [eval_mul, eval_C, bin_eval_nat]
   have hz : ∀ k, d < k → (fwdDiff 1)^[k] P.eval 0 = 0 := fun k hk => by
     rw [Polynomial.fwdDiff_iter_eq_zero_of_degree_lt (by omega)]; rfl

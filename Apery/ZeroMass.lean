@@ -299,7 +299,7 @@ theorem energy_Ltr_nonpos [Fintype ι] {s : ι → ℝ} {γ : ι → ℝ → ℂ
         ((Real.exp (-t) * (2 * π) ^ 2 - Gk γ t k l) / t) := by
     rw [intervalIntegral.integral_finsetSum
       (f := fun k t => ∑ l, s k * s l * ((Real.exp (-t) * (2 * π) ^ 2 - Gk γ t k l) / t))
-      (fun k _ => (continuousOn_finset_sum _ fun l _ =>
+      (fun k _ => (continuousOn_finsetSum _ fun l _ =>
         continuousOn_const.mul (hc k l)).intervalIntegrable), Finset.mul_sum]
     refine Finset.sum_congr rfl fun k _ => ?_
     rw [intervalIntegral.integral_finsetSum

@@ -117,7 +117,7 @@ theorem mono_moment (e : ℕ) :
     have hz := hasSum_zeta_nat (k := e + 1) (by omega)
     have hz1 := (hasSum_nat_add_iff' 1).mpr hz
     simp only [Finset.range_one, Finset.sum_singleton, Nat.cast_zero, ne_eq,
-      Nat.mul_eq_zero, OfNat.ofNat_ne_zero, Nat.add_eq_zero, one_ne_zero, and_false, or_self,
+      Nat.mul_eq_zero, OfNat.ofNat_ne_zero, Nat.add_eq_zero_iff, one_ne_zero, and_false, or_self,
       not_false_eq_true, zero_pow, div_zero, sub_zero] at hz1
     have hS : ∑' ℓ : ℕ, 1 / ((ℓ : ℝ) + 1) ^ (2 * e + 2) =
         (-1 : ℝ) ^ (e + 1 + 1) * (2 : ℝ) ^ (2 * (e + 1) - 1) * Real.pi ^ (2 * (e + 1)) *

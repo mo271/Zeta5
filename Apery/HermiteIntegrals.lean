@@ -46,7 +46,7 @@ lemma integrableOn_of_le_inv_sq {a : ℝ} (ha : 0 < a) {f : ℝ → ℝ} (hf : A
   rw [Real.norm_eq_abs]
   have hC0 : 0 ≤ C := by
     by_contra hneg
-    push_neg at hneg
+    push Not at hneg
     have h1 := hC y hy
     have h2 : C / (y ^ 2 + a ^ 2) < 0 := div_neg_of_neg_of_pos hneg (by positivity)
     linarith [abs_nonneg (f y)]

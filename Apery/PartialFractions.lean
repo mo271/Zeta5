@@ -67,7 +67,7 @@ lemma modByMonic_eq_sum_res (K : ℕ) (P : ℚ[X]) :
     have hL : (P %ₘ D K).eval (-(j₀ : ℚ) ^ 2) = P.eval (-(j₀ : ℚ) ^ 2) := by
       conv_rhs => rw [← modByMonic_add_div P (D K)]
       rw [eval_add, eval_mul, eval_D_eq_zero hj₀, zero_mul, add_zero]
-    rw [hL, eval_finset_sum, Finset.sum_eq_single j₀]
+    rw [hL, eval_finsetSum, Finset.sum_eq_single j₀]
     · rw [eval_mul, eval_C, eval_prod, res, eval_derivative_D hj₀]
       have hne := eval_derivative_D_ne_zero hj₀
       rw [eval_derivative_D hj₀] at hne

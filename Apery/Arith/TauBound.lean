@@ -30,14 +30,14 @@ lemma derivative_bin' {k m : ℕ} (hm : m ≤ k) :
     (fun n hn => by rw [Finset.mem_filter] at hn; rw [if_neg hn.2, C_0, zero_mul]), add_zero]
   apply Finset.sum_nbij' (fun n => m - n) (fun j => m - j)
   · intro n hn; simp only [Finset.mem_filter, Finset.mem_range, Finset.coe_filter,
-      Set.mem_setOf_eq] at hn ⊢; simp only [Finset.mem_Icc]; omega
+      Set.mem_ofPred_eq] at hn ⊢; simp only [Finset.mem_Icc]; omega
   · intro j hj; simp only [Finset.mem_Icc, Finset.coe_Icc, Set.mem_Icc] at hj ⊢
     simp only [Finset.mem_filter, Finset.mem_range]; omega
   · intro n hn; simp only [Finset.mem_filter, Finset.mem_range, Finset.coe_filter,
-      Set.mem_setOf_eq] at hn; omega
+      Set.mem_ofPred_eq] at hn; omega
   · intro j hj; simp only [Finset.coe_Icc, Set.mem_Icc, Finset.mem_coe, Finset.mem_Icc] at hj; omega
   · intro n hn
-    simp only [Finset.mem_filter, Finset.mem_range, Finset.coe_filter, Set.mem_setOf_eq] at hn
+    simp only [Finset.mem_filter, Finset.mem_range, Finset.coe_filter, Set.mem_ofPred_eq] at hn
     rw [if_pos hn.2, show m - (m - n) = n by omega]
 
 lemma VG_dcoef {j k : ℕ} (hj : 1 ≤ j) (hjk : j ≤ k) : VG p (dcoef j) (-(Nat.log p k : ℚ)) := by

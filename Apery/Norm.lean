@@ -228,7 +228,7 @@ lemma padicValRat_mN (n : ℕ) (p : ℕ) [Fact p.Prime] :
       (padicValNat p q : ℤ) = if q = p then 1 else 0 := by
     intro q hq
     have hq' : q.Prime := (Finset.mem_filter.mp hq).2
-    haveI := Fact.mk hq'
+    have := Fact.mk hq'
     split_ifs with h
     · subst h; simp [padicValNat.self (Fact.out : q.Prime).one_lt]
     · rw [padicValNat_primes (Ne.symm h)]; rfl
@@ -247,7 +247,7 @@ lemma rat_int_of_VG {q : ℚ} (h : ∀ p : ℕ, ∀ _ : Fact p.Prime, VG p q 0) 
   have hden : q.den ≠ 1 := fun h1 => hne ⟨q.num, (Rat.coe_int_num_of_den_eq_one h1).symm⟩
   set p := q.den.minFac with hpdef
   have hpp : p.Prime := Nat.minFac_prime hden
-  haveI := Fact.mk hpp
+  have := Fact.mk hpp
   have hdvd : p ∣ q.den := Nat.minFac_dvd _
   rcases h p ‹_› with h0 | hv
   · exact hne ⟨0, by simp [h0]⟩

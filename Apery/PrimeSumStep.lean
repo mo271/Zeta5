@@ -104,7 +104,7 @@ lemma stepSum_tendsto {c v : ℕ → ℝ} (r : ℕ) (hc0 : 0 < c 0) (hmono : ∀
     refine Finset.sum_congr rfl fun j _ => ?_
     ring
   rw [e]
-  refine tendsto_finset_sum _ fun j hj => ?_
+  refine tendsto_finsetSum _ fun j hj => ?_
   have hj := Finset.mem_range.mp hj
   exact (wsum_tendsto (hpos j hj.le) (hmono j hj)).const_mul _
 

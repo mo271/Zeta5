@@ -71,7 +71,7 @@ theorem VG_eval_int_of_window {P : ℚ[X]} {d : ℕ} (hd : P.natDegree ≤ d) (s
   obtain ⟨e, he, hev⟩ := binRep_of_values hQd hQv
   have hPz : P.eval (z : ℚ) = Q.eval ((z - s : ℤ) : ℚ) := by
     rw [hQ, eval_comp]; simp
-  rw [hPz, he, eval_finset_sum]
+  rw [hPz, he, eval_finsetSum]
   refine VG.sum _ fun m hm => ?_
   rw [eval_mul, eval_C]
   have := (hev m (by have := Finset.mem_range.mp hm; omega)).mul (VG_bin_eval_int (p := p) m (z - s))

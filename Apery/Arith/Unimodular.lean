@@ -24,7 +24,7 @@ lemma sum_pow_X_sub_C_eq_zero {ι : Type*} (s : Finset ι) (d : ι → ℕ) (hd 
   intro a ha
   have h2 := congrArg (fun f : F[X] => (f.comp (X + C γ)).coeff (d a)) h
   simp only [Polynomial.sum_comp, mul_comp, C_comp, pow_comp, sub_comp, X_comp,
-    add_sub_cancel_right, zero_comp, coeff_zero, finset_sum_coeff, coeff_C_mul, coeff_X_pow] at h2
+    add_sub_cancel_right, zero_comp, coeff_zero, finsetSum_coeff, coeff_C_mul, coeff_X_pow] at h2
   rw [Finset.sum_eq_single a] at h2
   · simpa using h2
   · intro b hb hba
@@ -121,7 +121,7 @@ theorem coeffMat_det_unit {h : ℕ} {p : ℕ} [hp : Fact p.Prime] {ι : Type*} [
     apply classBasis_independent γ hγ L cls idx hidx hinj v
     rw [← Finset.sum_congr rfl fun a _ => by rw [← hred a]]
     ext k
-    rw [finset_sum_coeff, coeff_zero]
+    rw [finsetSum_coeff, coeff_zero]
     simp only [coeff_C_mul, coeff_map]
     by_cases hk : k < h
     · have := congrFun hv ⟨k, hk⟩

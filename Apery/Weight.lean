@@ -123,7 +123,7 @@ lemma aemeasurable_wS : AEMeasurable wS (volume.restrict (Ioi 0)) := by
     ∑ ℓ ∈ Finset.range n, ((ℓ : ℝ) + 1) ^ 4 * Real.exp (-(2 * Real.pi * ((ℓ : ℝ) + 1) * y))) ?_ ?_
   · intro n
     refine (Continuous.measurable ?_).aemeasurable
-    exact continuous_finset_sum _ fun ℓ _ => continuous_const.mul (Real.continuous_exp.comp (by fun_prop))
+    exact continuous_finsetSum _ fun ℓ _ => continuous_const.mul (Real.continuous_exp.comp (by fun_prop))
   · refine (ae_restrict_iff' measurableSet_Ioi).mpr (Filter.Eventually.of_forall fun y hy => ?_)
     exact (summable_w_term hy).hasSum.tendsto_sum_nat
 

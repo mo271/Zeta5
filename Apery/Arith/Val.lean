@@ -164,7 +164,7 @@ lemma C_mul [Fact p.Prime] {q r s : ℚ} {f : ℚ[X]} (hq : VG p q r) (hf : GV p
 
 lemma sum [Fact p.Prime] {ι : Type*} (s : Finset ι) {f : ι → ℚ[X]} {r : ℚ} (h : ∀ i ∈ s, GV p (f i) r) :
     GV p (∑ i ∈ s, f i) r := fun n => by
-  rw [finset_sum_coeff]; exact VG.sum s fun i hi => h i hi n
+  rw [finsetSum_coeff]; exact VG.sum s fun i hi => h i hi n
 
 lemma prod [Fact p.Prime] {ι : Type*} (s : Finset ι) {f : ι → ℚ[X]} {r : ι → ℚ} (h : ∀ i ∈ s, GV p (f i) (r i)) :
     GV p (∏ i ∈ s, f i) (∑ i ∈ s, r i) := by

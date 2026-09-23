@@ -61,7 +61,7 @@ lemma range2_le {n : ℕ} (hn : 10400 ≤ n) :
     (by norm_num) fun k hk hp => ?_
   have hk' := Finset.mem_Ioc.mp hk
   obtain ⟨hp7, hodd, hsmall, hsq, hdeg, hn10⟩ := big_prime_facts hn hk'.1 hp
-  haveI := Fact.mk hp
+  have := Fact.mk hp
   have h := tail_Lp_le (p := k) (n := n) (by omega) hodd hp7 hsmall (by omega) hsq hdeg
   have hC := Ctail_le (n := n) (p := k) hp.pos (by
     unfold Mcut at hsmall; rw [not_le] at hsmall
@@ -90,7 +90,7 @@ lemma range3_le {n : ℕ} (hn : 10400 ≤ n) :
   refine range_sum_le (fun k => -(Lp n k : ℝ)) fIn (Kr n) (10 ^ 8) (by norm_num) fun k hk hp => ?_
   have hk' := Finset.mem_Ioc.mp hk
   obtain ⟨hp7, hodd, hsmall, hsq, hdeg, hn10⟩ := big_prime_facts hn (by omega) hp
-  haveI := Fact.mk hp
+  have := Fact.mk hp
   have hin : 3 * k ≤ 40 * n := by have := Nat.div_mul_le_self (40 * n) 3; omega
   have hkR : (0 : ℝ) < k := by exact_mod_cast hp.pos
   set x : ℝ := 40 * n / k with hx
@@ -133,7 +133,7 @@ lemma range4_le {n : ℕ} (hn : 10400 ≤ n) :
   refine range_sum_le (fun k => -(Lp n k : ℝ)) Eout (Kr n) (10 ^ 5) (by norm_num) fun k hk hp => ?_
   have hk' := Finset.mem_Ioc.mp hk
   obtain ⟨hp7, hodd, _, hsq, _, _⟩ := big_prime_facts hn (by omega) hp
-  haveI := Fact.mk hp
+  have := Fact.mk hp
   have hout : 40 * n < 3 * k := by
     have := Nat.lt_div_mul_add (a := 40 * n) (show 0 < 3 by norm_num); omega
   have h := outer_Lp_le (p := k) (n := n) (by omega) hodd hp7 hout hk'.2 hsq
