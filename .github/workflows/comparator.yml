@@ -11,7 +11,9 @@ permissions:
 jobs:
   comparator:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    # The solution imports the complete Apery formalisation, whose first
+    # clean build on a GitHub runner takes longer than the default 45 minutes.
+    timeout-minutes: 120
 
     steps:
       - uses: actions/checkout@v4
